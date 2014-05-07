@@ -1,4 +1,0 @@
-AndroidCurso
-============
-
-Curso de Android

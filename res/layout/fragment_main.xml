@@ -9,10 +9,12 @@
     tools:context="com.insa.androidcurso.MainActivity$PlaceholderFragment" >
 
     <TextView
+        android:id="@id/txtHello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="109dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="91dp"
         android:text="@string/hello_world" />
 
 </RelativeLayout>

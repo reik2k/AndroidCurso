@@ -3,5 +3,6 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.insa.androidcurso.MainActivity"
-    tools:ignore="MergeRootFrame" />
+    tools:context="com.insa.cursoandroid.MainActivity"
+    tools:ignore="MergeRootFrame" 
+    /> 

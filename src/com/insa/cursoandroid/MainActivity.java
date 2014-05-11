@@ -1,7 +1,7 @@
-package com.insa.androidcurso;
+package com.insa.cursoandroid; 
 
+import com.insa.androidcurso.*;
 import android.app.Activity;
-import android.app.ActionBar;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,14 +9,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
+
 
 public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_main); 
 
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()
@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
-			return true;
+			return true; 
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -57,6 +57,7 @@ public class MainActivity extends Activity {
 				Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.fragment_main, container,
 					false);
+			
 			return rootView;
 		}
 	}

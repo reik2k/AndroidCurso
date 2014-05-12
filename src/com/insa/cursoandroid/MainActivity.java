@@ -9,10 +9,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
 
+	static String txt;
+	static TextView mensaje;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -57,6 +61,20 @@ public class MainActivity extends Activity {
 				Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.fragment_main, container,
 					false);
+			mensaje	=	(TextView)rootView.findViewById(R.id.txtHello);
+			txt ="";
+			
+			for(int i=1;i<=100;i++)
+			{
+				if(i%5 == 0)
+				{
+					txt += i + "\n";
+					
+				}else	txt += i + " ";
+				
+			}
+			
+			mensaje.setText(txt);
 			
 			return rootView;
 		}

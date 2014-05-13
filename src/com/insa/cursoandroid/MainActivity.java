@@ -4,18 +4,57 @@ import com.insa.androidcurso.*;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Build;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.util.Log;
 
 public class MainActivity extends Activity {
+	String cadena = "Eventos";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
-
 		
+		Log.d(cadena,"Estoy en el evento onCreate()");
+		
+	}
+	
+	@Override
+	public void onStart()
+	{
+		super.onStart();
+		
+		Log.d(cadena,"Estoy en el evento onStart()");
+	}
+	@Override
+	public void onResume()
+	{
+		super.onResume();
+		
+		Log.d(cadena,"Estoy en el evento onResume()");
+	}
+	@Override
+	public void onPause()
+	{
+		super.onPause();
+		
+		Log.d(cadena,"Estoy en el evento onPause()");
+	}
+	@Override
+	public void onStop()
+	{
+		super.onDestroy();
+		
+		Log.d(cadena,"Estoy en el evento onStop()");
+	}
+	@Override
+	public void onDestroy()
+	{
+		super.onDestroy();
+		
+		Log.d(cadena,"Estoy en el evento onDestroy()");
 	}
 
 	@Override

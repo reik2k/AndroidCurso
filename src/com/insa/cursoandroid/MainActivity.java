@@ -26,7 +26,7 @@ public class MainActivity extends Activity implements OnClickListener{
 		
 	}
 
-	public void onClick()
+	public void onClick(View view)
 	{
 		boton.setText("Hola mi nombre es Abel!");
 	}
@@ -49,11 +49,6 @@ public class MainActivity extends Activity implements OnClickListener{
 			return true; 
 		}
 		return super.onOptionsItemSelected(item);
-	}
-
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

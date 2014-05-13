@@ -6,18 +6,31 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnClickListener{
 
+	Button boton;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
-
+		
+		boton = new Button(this);
+		boton.setOnClickListener(this);
+		setContentView(boton);
 		
 	}
 
+	public void onClick()
+	{
+		boton.setText("Hola mi nombre es Abel!");
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -36,6 +49,11 @@ public class MainActivity extends Activity {
 			return true; 
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

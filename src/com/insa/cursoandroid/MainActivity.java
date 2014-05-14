@@ -6,15 +6,45 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
 
+	private EditText 	editFieldText;
+	private Button 		btn;
+	private TextView 	txtView;
+	private String		aux;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
-
+		
+		editFieldText 	= 	(EditText)findViewById(R.id.editText1);
+		btn 			= 	(Button)findViewById(R.id.button1);
+		txtView 		= 	(TextView)findViewById(R.id.textView1);
+		
+		editFieldText.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) {
+				editFieldText.setText("");
+				txtView.setText("Tu nombre es: ");
+				
+			}
+		});
+		btn.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) 
+			{
+				aux = (String) txtView.getText();
+				txtView.setText( aux +" "+ editFieldText.getText());
+			}
+		});
 		
 	}
 

@@ -4,5 +4,7 @@
     <string name="app_name">AndroidCurso</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+    <string name="txt_button">Haz click aquí...</string>
+    <string name="txt_fieldText">Escribe tu nombre aquí</string>
+    <string name="txt_editLargeText">Tú nombre es: </string>
 </resources>

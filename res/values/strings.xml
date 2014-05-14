@@ -7,4 +7,6 @@
     <string name="txt_button">Haz click aquí...</string>
     <string name="txt_fieldText">Escribe tu nombre aquí</string>
     <string name="txt_editLargeText">Tú nombre es: </string>
+    <string name="title_activity_destino">ActivityDestino</string>
+
 </resources>

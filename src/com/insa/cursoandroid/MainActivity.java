@@ -1,8 +1,7 @@
 package com.insa.cursoandroid; 
 
-import com.insa.androidcurso.*;
-
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,15 +9,17 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
+import com.insa.cursoandroid.R;
 
 
 public class MainActivity extends Activity {
 
 	private EditText 	editFieldText;
 	private Button 		btn;
-	private TextView 	txtView;
-	private String		aux;
+	//private String		aux;
+	private Bundle		bnd;
+	private Intent 		intent;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +28,11 @@ public class MainActivity extends Activity {
 		
 		editFieldText 	= 	(EditText)findViewById(R.id.editText1);
 		btn 			= 	(Button)findViewById(R.id.button1);
-		txtView 		= 	(TextView)findViewById(R.id.textView1);
 		
 		editFieldText.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) {
 				editFieldText.setText("");
-				txtView.setText("Tu nombre es: ");
 				
 			}
 		});
@@ -41,8 +40,15 @@ public class MainActivity extends Activity {
 			
 			public void onClick(View v) 
 			{
-				aux = (String) txtView.getText();
-				txtView.setText( aux +" "+ editFieldText.getText());
+				intent 	= new Intent(	MainActivity.this,
+										FrmActivityDestino.class);
+				bnd 	= new Bundle();
+				
+				bnd.putString("name","nombre: "	+	
+										editFieldText.getText().toString());
+				intent.putExtras(bnd);
+				
+				startActivity(intent);
 			}
 		});
 		

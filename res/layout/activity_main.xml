@@ -7,27 +7,38 @@
     tools:ignore="MergeRootFrame" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btnNav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="172dp"
-        android:text="@string/txt_button" />
+        android:layout_marginTop="42dp"
+        android:text="@string/btnNav" />
 
-    <EditText
-        android:id="@+id/editText1"
+    <Button
+        android:id="@+id/btnNav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/btnNav"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="68dp"
-        android:ems="10"
-        android:lines="1"
-        android:maxLines="1"
-        android:text="@string/txt_fieldText" >
+        android:layout_marginTop="40dp"
+        android:text="@string/btnTel" />
 
-        <requestFocus />
-    </EditText>
+    <Button
+        android:id="@+id/btnMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/btnMap" />
+
+    <Button
+        android:id="@+id/btnContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:text="@string/btnContact" />
 
 </RelativeLayout>

@@ -4,7 +4,10 @@
     <string name="app_name">AndroidCurso</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="txt_button">Haz click aquí...</string>
+    <string name="btnNav">Navegador</string>
+    <string name="btnTel">Llamar por Teléfono</string>
+    <string name="btnMap">Mapa</string>
+    <string name="btnContact">Contactos</string>
     <string name="txt_fieldText">Escribe tu nombre aquí</string>
     <string name="txt_editLargeText">Tú nombre es: </string>
     <string name="title_activity_destino">ActivityDestino</string>

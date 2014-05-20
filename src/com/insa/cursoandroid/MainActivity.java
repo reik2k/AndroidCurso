@@ -15,9 +15,7 @@ import com.insa.cursoandroid.R;
 
 public class MainActivity extends Activity {
 
-	private EditText 	editFieldText;
-	private Button 		btn;
-	//private String		aux;
+	private Button 		btnNav,btnTel,btnMap,btnContact;
 	private Bundle		bnd;
 	private Intent 		intent;
 	
@@ -26,27 +24,13 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
 		
-		editFieldText 	= 	(EditText)findViewById(R.id.editText1);
-		btn 			= 	(Button)findViewById(R.id.button1);
+		btnNav 			= 	(Button)findViewById(R.id.btnNav);
 		
-		editFieldText.setOnClickListener(new OnClickListener() {
-			
-			public void onClick(View v) {
-				editFieldText.setText("");
-				
-			}
-		});
-		btn.setOnClickListener(new OnClickListener() {
+
+		btnNav.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) 
 			{
-				intent 	= new Intent(	MainActivity.this,
-										FrmActivityDestino.class);
-				bnd 	= new Bundle();
-				
-				bnd.putString("name","nombre: "	+	
-										editFieldText.getText().toString());
-				intent.putExtras(bnd);
 				
 				startActivity(intent);
 			}

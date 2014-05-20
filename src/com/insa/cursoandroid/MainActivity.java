@@ -2,6 +2,7 @@ package com.insa.cursoandroid;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,7 +17,6 @@ import com.insa.cursoandroid.R;
 public class MainActivity extends Activity {
 
 	private Button 		btnNav,btnTel,btnMap,btnContact;
-	private Bundle		bnd;
 	private Intent 		intent;
 	
 	@Override
@@ -24,14 +24,47 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
 		
-		btnNav 			= 	(Button)findViewById(R.id.btnNav);
+		//Declaración de los botones del Activity Principal
+		btnNav		= 	(Button)findViewById(R.id.btnNav);
+		btnTel		= 	(Button)findViewById(R.id.btnTel);
+		btnMap		= 	(Button)findViewById(R.id.btnMap);
+		btnContact	= 	(Button)findViewById(R.id.btnContact);
 		
-
 		btnNav.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) 
 			{
+				intent = new Intent(	Intent.ACTION_VIEW, 
+						Uri.parse("http://www.google.es"));
+				startActivity(intent);
+			}
+		});
+		btnTel.setOnClickListener(new OnClickListener() {
+					
+			public void onClick(View v) 
+			{
+				intent = new Intent(	Intent.ACTION_CALL, 
+										Uri.parse("675666114"));
 				
+				startActivity(intent);
+			}
+		});
+		
+		btnMap.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) 
+			{
+				intent = new Intent(	Intent.ACTION_VIEW, 
+						Uri.parse("geo:50.123,7.134?z=19"));
+				startActivity(intent);
+			}
+		});
+		btnContact.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) 
+			{
+				intent = new Intent(	Intent.ACTION_VIEW, 
+						Uri.parse("content://contacts/people"));
 				startActivity(intent);
 			}
 		});

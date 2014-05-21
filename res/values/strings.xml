@@ -3,6 +3,11 @@
 
     <string name="app_name">AndroidCurso</string>
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="btn_Navegar">Navegar</string>
+    <string name="txt_Protocolo">http://</string>
+    <string name="btn_Terminar">Terminar</string>
+    <string name="app_Name">Navegador</string>
+    <string name="action_settings">Menú</string>
+    <string name="title_activity_navegador">NavegadorActivity</string>
 
 </resources>

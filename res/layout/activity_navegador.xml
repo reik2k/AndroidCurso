@@ -3,25 +3,23 @@
     android:id="@+id/webNavigator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.insa.cursoandroid.MainActivity"
-    tools:ignore="MergeRootFrame" > 
+    tools:context="com.insa.cursoandroid.NavegadorActivity"
+    tools:ignore="MergeRootFrame" >
 
-    <TextView
-        android:id="@+id/txtTexto"
+    <Button
+        android:id="@+id/btn_Terminar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="@string/txt_Protocolo" />
+        android:text="@string/btn_Terminar" />
 
-    <Button
-        android:id="@+id/btnNav"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <WebView
+        android:id="@+id/webView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/txtTexto"
-        android:text="@string/btn_Navegar" /> 
+        android:layout_below="@+id/btn_Terminar" />
 
 </RelativeLayout>

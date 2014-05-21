@@ -4,16 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.insa.cursoandroid.MainActivity"
-    tools:ignore="MergeRootFrame" > 
+    tools:ignore="MergeRootFrame" >
 
-    <TextView
-        android:id="@+id/txtTexto"
+    
+
+        <requestFocus />
+
+    <EditText
+        android:id="@+id/txtNavegar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="@string/txt_Protocolo" />
+        android:ems="10" />
 
     <Button
         android:id="@+id/btnNav"
@@ -21,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/txtTexto"
-        android:text="@string/btn_Navegar" /> 
+        android:layout_below="@+id/txtNavegar"
+        android:text="@string/btn_Navegar" />
 
 </RelativeLayout>

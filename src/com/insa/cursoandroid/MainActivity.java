@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
 
-		txt_protocolo = (EditText)findViewById(R.id.txtTexto);
+		txt_protocolo = (EditText)findViewById(R.id.txtNavegar); 
 		btn_Navegar = (Button)findViewById(R.id.btnNav);
 		
 		btn_Navegar.setOnClickListener(new OnClickListener() {

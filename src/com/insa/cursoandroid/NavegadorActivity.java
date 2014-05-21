@@ -10,7 +10,7 @@ import android.webkit.WebView;
 import android.widget.Button;
 
 public class NavegadorActivity extends Activity {
-	static WebView webView;
+	WebView webView;
 	static Button btnTerminar;
 	
 	@Override
@@ -18,12 +18,12 @@ public class NavegadorActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_navegador);
 		
+		webView 	= (WebView)findViewById(R.id.webNavigator);
+		btnTerminar = (Button)findViewById(R.id.btn_Terminar);
+		
 		Bundle b = getIntent().getExtras();
 		
-		webView = (WebView)findViewById(R.id.webNavigator);
 		webView.loadUrl(b.getString("param1"));
-		
-		btnTerminar = (Button)findViewById(R.id.btn_Terminar);
 		
 		btnTerminar.setOnClickListener(new OnClickListener() {
 			

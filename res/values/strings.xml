@@ -4,5 +4,8 @@
     <string name="app_name">AndroidCurso</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="btnIr">IR vista dos</string>
+    <string name="title_activity_pantalla2">Pantalla2Activity</string>
+    <string name="btnVovler">volver</string>
 
 </resources>

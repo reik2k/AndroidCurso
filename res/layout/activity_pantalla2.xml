@@ -3,25 +3,22 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.insa.cursoandroid.MainActivity"
+    tools:context="com.insa.cursoandroid.Pantalla2Activity"
     tools:ignore="MergeRootFrame" >
+    <TextView
+        android:id="@+id/txtDos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" />
 
     <Button
-        android:id="@+id/btnIr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="false"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/btnIr" />
-
-    <TextView
-        android:id="@+id/txtPantalla1"
+        android:id="@+id/bntVolver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/btnIr" />
-
+        android:layout_below="@+id/txtDos"
+        android:text="@string/btnVovler" />
 </RelativeLayout>

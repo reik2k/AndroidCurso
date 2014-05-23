@@ -3,6 +3,8 @@
     android:id="@+id/webNavigator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:columnCount="1"
+    android:orientation="horizontal"
     tools:context="com.insa.cursoandroid.NavegadorActivity"
     tools:ignore="MergeRootFrame" >
 
@@ -13,13 +15,18 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:layout_gravity="left"
         android:text="@string/btn_Terminar" />
 
     <WebView
         android:id="@+id/webView1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btn_Terminar"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/btn_Terminar" />
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btn_Terminar"
+        android:layout_gravity="fill" />
 
 </RelativeLayout>

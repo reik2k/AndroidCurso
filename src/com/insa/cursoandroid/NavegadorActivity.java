@@ -18,11 +18,10 @@ public class NavegadorActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_navegador);
 		
-		webView 	= (WebView)findViewById(R.id.webNavigator);
+		webView 	= (WebView)findViewById(R.id.webView1);
 		btnTerminar = (Button)findViewById(R.id.btn_Terminar);
 		
 		Bundle b = getIntent().getExtras();
-		
 		webView.loadUrl(b.getString("param1"));
 		
 		btnTerminar.setOnClickListener(new OnClickListener() {
@@ -34,7 +33,7 @@ public class NavegadorActivity extends Activity {
 		});
 		
 		/*
-		 * Se elimina el fragment No se utilizará para este ejemplo.
+		 * Se elimina el fragment No se utilizar�� para este ejemplo.
 		 * 
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()

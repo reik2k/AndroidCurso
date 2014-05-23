@@ -1,6 +1,7 @@
 package com.insa.cursoandroid; 
 
 import com.insa.cursoandroid.R;
+import com.insa.cursoandroid.NavegadorActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

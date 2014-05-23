@@ -17,7 +17,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:ems="10" />
+        android:ems="10"
+        android:text="@string/txt_Protocolo" />
 
     <Button
         android:id="@+id/btnNav"

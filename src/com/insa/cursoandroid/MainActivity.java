@@ -15,14 +15,16 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
 	TextView 	txt;
 	Button 		btn;
+	String		texto;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
 
-		txt = (TextView)findViewById(R.id.txtPantalla1);
+		txt = (TextView)findViewById(R.id.textView1);
 		btn	= (Button)findViewById(R.id.btnIr);
+		texto = "Texto inicial.";
 		
 		btn.setOnClickListener(new OnClickListener() {
 			
@@ -31,13 +33,24 @@ public class MainActivity extends Activity {
 				Intent i = 
 						new Intent(MainActivity.this,Pantalla2Activity.class);
 				
-				bundle.putString("param1", txt.getText().toString());
+				bundle.putString("param1", "Pantalla2: "+ texto);
 				i.putExtras(bundle);
 				startActivity(i);
 			}
 		});
 	}
-
+	@Override
+	protected void onActivityResult(int requestCode,int resultCode, Intent i)
+	{
+		super.onActivityResult(requestCode, resultCode, i);
+		if(requestCode == 0 && resultCode == RESULT_OK)
+		{
+			texto = i.getExtras().getString("param2").toString();
+			
+			txt.setText("Datos devueltos: " + texto);
+		}
+		
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 

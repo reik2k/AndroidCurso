@@ -10,18 +10,18 @@
         android:id="@+id/btnIr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="false"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:text="@string/btnIr" />
 
     <TextView
-        android:id="@+id/txtPantalla1"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/btnIr" />
+        android:layout_below="@+id/btnIr"
+        android:text="@string/pantalla1" />
 
 </RelativeLayout>

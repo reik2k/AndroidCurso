@@ -7,5 +7,6 @@
     <string name="btnIr">IR vista dos</string>
     <string name="title_activity_pantalla2">Pantalla2Activity</string>
     <string name="btnVovler">volver</string>
+    <string name="pantalla1">Pantalla1</string>
 
 </resources>

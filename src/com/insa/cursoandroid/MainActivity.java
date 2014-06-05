@@ -9,11 +9,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
-	TextView 	txt;
+	EditText 	txt;
 	Button 		btn;
 	String		texto;
 	
@@ -22,20 +23,26 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
 
-		txt = (TextView)findViewById(R.id.textView1);
+		txt = (EditText)findViewById(R.id.texto);
 		btn	= (Button)findViewById(R.id.btnIr);
-		texto = "Texto inicial.";
+		texto = txt.getText().toString();
+
+		if (texto == "")
+		{
+			texto = "Texto inicial.";
+
+		}
 		
 		btn.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) {
-				Bundle bundle = new Bundle();
-				Intent i = 
-						new Intent(MainActivity.this,Pantalla2Activity.class);
+				Bundle bundle 	= new Bundle();
+				Intent i 		= new Intent( 	MainActivity.this,
+												Pantalla2Activity.class);
 				
-				bundle.putString("param1", "Pantalla2: "+ texto);
+				bundle.putString( "param1", "Pantalla2: "+ texto);
 				i.putExtras(bundle);
-				startActivity(i);
+				startActivityForResult(i,0);
 			}
 		});
 	}

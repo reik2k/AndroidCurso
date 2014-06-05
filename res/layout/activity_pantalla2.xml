@@ -5,13 +5,6 @@
     android:layout_height="match_parent"
     tools:context="com.insa.cursoandroid.Pantalla2Activity"
     tools:ignore="MergeRootFrame" >
-    <TextView
-        android:id="@+id/txtDos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true" />
 
     <Button
         android:id="@+id/bntVolver"
@@ -19,6 +12,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/txtDos"
         android:text="@string/btnVovler" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bntVolver"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:ems="10"
+        android:inputType="text" />
+
 </RelativeLayout>

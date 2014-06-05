@@ -8,12 +8,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class Pantalla2Activity extends Activity {
 	
 	Button 		btnVolver;
-	TextView 	txtVolver;
+	EditText 	txtVolver;
 	Bundle 		bundle;
 	
 	@Override
@@ -22,7 +23,7 @@ public class Pantalla2Activity extends Activity {
 		setContentView(R.layout.activity_pantalla2);
 		
 		btnVolver 	= (Button)findViewById(R.id.bntVolver);
-		txtVolver 	= (TextView)findViewById(R.id.txtDos);
+		txtVolver 	= (EditText)findViewById(R.id.editText2);
 		
 		bundle = getIntent().getExtras();
 		
@@ -34,7 +35,7 @@ public class Pantalla2Activity extends Activity {
 			{
 				Intent i = getIntent();
 				
-				bundle.putString("param2", "Pantalla1 "
+				bundle.putString("param2", "Pantalla1: "
 						+ txtVolver.getText().toString());
 				
 				i.putExtras(bundle);

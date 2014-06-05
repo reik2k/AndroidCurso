@@ -4,5 +4,8 @@
     <string name="app_name">AndroidCurso</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="txtNameTitle">Write Your Name, Please</string>
+    <string name="strRepeat">How many times Do u want to repeat your text?</string>
+    <string name="title_activity_second">SecondActivity</string>
 
 </resources>

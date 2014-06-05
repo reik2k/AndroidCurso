@@ -25,13 +25,6 @@ public class MainActivity extends Activity {
 
 		txt = (EditText)findViewById(R.id.texto);
 		btn	= (Button)findViewById(R.id.btnIr);
-		texto = txt.getText().toString();
-
-		if (texto == "")
-		{
-			texto = "Texto inicial.";
-
-		}
 		
 		btn.setOnClickListener(new OnClickListener() {
 			
@@ -39,6 +32,14 @@ public class MainActivity extends Activity {
 				Bundle bundle 	= new Bundle();
 				Intent i 		= new Intent( 	MainActivity.this,
 												Pantalla2Activity.class);
+				
+				texto = txt.getText().toString();
+
+				if (texto.isEmpty())
+				{
+					texto = "Texto inicial.";
+
+				}
 				
 				bundle.putString( "param1", "Pantalla2: "+ texto);
 				i.putExtras(bundle);

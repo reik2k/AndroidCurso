@@ -35,8 +35,7 @@ public class Pantalla2Activity extends Activity {
 			{
 				Intent i = getIntent();
 				
-				bundle.putString("param2", "Pantalla1: "
-						+ txtVolver.getText().toString());
+				bundle.putString("param2", txtVolver.getText().toString());
 				
 				i.putExtras(bundle);
 				

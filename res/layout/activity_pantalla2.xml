@@ -18,10 +18,12 @@
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/bntVolver"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="text"
+        android:minLines="1" />
 
 </RelativeLayout>

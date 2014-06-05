@@ -27,15 +27,19 @@ public class Pantalla2Activity extends Activity {
 		
 		bundle = getIntent().getExtras();
 		
-		txtVolver.setText(bundle.getString("param1"));
+		txtVolver.setText("Screen1 tells: " + bundle.getString("param1"));
 		
 		btnVolver.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) 
 			{
-				Intent i = getIntent();
+				Intent 	i 		= getIntent();
+				int 	length 	= ("Screen1 tells: ").length();
 				
-				bundle.putString("param2", txtVolver.getText().toString());
+				
+				bundle.putString(	"param2", 
+									txtVolver.getText()
+									.toString().substring(length));
 				
 				i.putExtras(bundle);
 				

@@ -40,8 +40,12 @@ public class MainActivity extends Activity {
 					texto = "Texto inicial.";
 
 				}
+				if(texto.contains("Screen2 tells: "))
+				{
+					texto = texto.replace("Screen2 tells: ", "");
+				}
 				
-				bundle.putString( "param1", "Pantalla2: "+ texto);
+				bundle.putString( "param1", texto);
 				i.putExtras(bundle);
 				startActivityForResult(i,0);
 			}
@@ -55,7 +59,7 @@ public class MainActivity extends Activity {
 		{
 			texto = i.getExtras().getString("param2").toString();
 			
-			txt.setText("Datos devueltos: " + texto);
+			txt.setText("Screen2 tells: " + texto);
 		}
 		
 	}

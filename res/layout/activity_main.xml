@@ -29,7 +29,7 @@
     </EditText>
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/txtOutRepeat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="false"
@@ -39,13 +39,22 @@
         android:text="@string/strRepeat" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/edtRepeat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/txtOutRepeat"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="text|number" />
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/edtRepeat"
+        android:text="@string/strSend" />
 
 </RelativeLayout>

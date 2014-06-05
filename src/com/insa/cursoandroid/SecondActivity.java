@@ -9,14 +9,33 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.os.Build;
 
 public class SecondActivity extends Activity {
-
+	TextView txtResult;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_second);
+		
+		txtResult = (TextView)findViewById(R.id.txtOutRepeat);
+		
+		Bundle b = getIntent().getExtras();
+		String 	aux		= "";
+		String 	name 	= b.getString("param1");
+		int 	number	= Integer.parseInt(b.getString("param2"));
+		
+		for (int i = 0; i<number;i++)
+		{
+			if (i == 0)
+				aux += name;
+			else
+				aux += "-" + name;
+
+		}
+		txtResult.setText(aux);
 
 		/*if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()

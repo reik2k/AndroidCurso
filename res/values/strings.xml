@@ -7,5 +7,6 @@
     <string name="txtNameTitle">Write Your Name, Please</string>
     <string name="strRepeat">How many times Do u want to repeat your text?</string>
     <string name="title_activity_second">SecondActivity</string>
+    <string name="strSend">send</string>
 
 </resources>

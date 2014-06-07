@@ -11,5 +11,7 @@
     <string name="tglButton">ToggleButton</string>
     <string name="tglON">Activado</string>
     <string name="tglOFF">Desavtivado</string>
+    <string name="strCheckBox">Cambiar Imagen</string>
+    <string name="strImage">Plantilla de imagen</string>
 
 </resources>

@@ -65,6 +65,16 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:clickable="false"
-        android:src="@drawable/bad_chicken" />
+        android:contentDescription="@string/strImage"
+        android:src="@drawable/ic_launcher" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgBadChiken"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:text="@string/strCheckBox" />
 
 </RelativeLayout>

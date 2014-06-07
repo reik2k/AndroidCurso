@@ -13,5 +13,7 @@
     <string name="tglOFF">Desavtivado</string>
     <string name="strCheckBox">Cambiar Imagen</string>
     <string name="strImage">Plantilla de imagen</string>
+    <string name="strRadioButtonOne">Imagen del Pollo Encabronado</string>
+    <string name="strRadioButtonTwo">Imagen de Android sin Encabronar</string>
 
 </resources>

@@ -77,4 +77,25 @@
         android:layout_marginTop="33dp"
         android:text="@string/strCheckBox" />
 
+<RadioGroup
+    android:id="@+id/radGroup"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/checkBox1"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="31dp" >
+
+    <RadioButton
+        android:id="@+id/radAndroid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strRadioButtonTwo" />
+
+    <RadioButton
+        android:id="@+id/radPollo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strRadioButtonOne" />
+</RadioGroup>
+
 </RelativeLayout>

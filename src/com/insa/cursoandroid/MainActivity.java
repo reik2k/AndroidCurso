@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-
 public class MainActivity extends Activity {
 
 	ToggleButton tglButton;

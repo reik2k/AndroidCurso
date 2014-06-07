@@ -3,7 +3,6 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="checkToggleButton"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
     tools:context="com.insa.cursoandroid.MainActivity"
@@ -58,5 +57,14 @@
         android:text="@string/tglButton"
         android:textOff="@string/tglOFF"
         android:textOn="@string/tglON" />
+
+    <ImageView
+        android:id="@+id/imgBadChiken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:clickable="false"
+        android:src="@drawable/bad_chicken" />
 
 </RelativeLayout>

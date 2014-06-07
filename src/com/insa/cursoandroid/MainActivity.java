@@ -2,24 +2,33 @@ package com.insa.cursoandroid;
 
 import com.insa.cursoandroid.R;
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
 public class MainActivity extends Activity {
 
-	ToggleButton tglButton;
+	ToggleButton 	tglButton;
+	CheckBox		chkBox;
+	ImageView		img;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		tglButton = (ToggleButton)findViewById(R.id.toggleButton1);
+		tglButton 	= (ToggleButton)findViewById(R.id.toggleButton1);
+		chkBox		= (CheckBox)findViewById(R.id.checkBox1);
+		img			= (ImageView)findViewById(R.id.imgBadChiken);
 		
+		//ToggelButton Listener 
 		tglButton.setOnClickListener(new View.OnClickListener() 
 		{
 			
@@ -37,6 +46,26 @@ public class MainActivity extends Activity {
 				
 			}
 		});
+		
+		//CheckBox Lsitener
+		
+		chkBox.setOnCheckedChangeListener(
+				new CheckBox.OnCheckedChangeListener()
+				{
+
+					public void onCheckedChanged(	CompoundButton buttonView,
+													boolean isChecked) 
+					{
+						if(isChecked)
+						{
+							img.setImageResource(R.drawable.bad_chicken);
+						}else
+							{
+								img.setImageResource(R.drawable.ic_launcher);
+							}
+					
+					}
+				});
 		
 	}
 

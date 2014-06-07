@@ -4,5 +4,9 @@
     <string name="app_name">AndroidCurso</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="strVerde">Verde</string>
+    <string name="strAzul">Azul</string>
+    <string name="strRojo">Rojo</string>
+    <string name="strCheckBox">Texto Font Size</string>
 
 </resources>

@@ -4,5 +4,12 @@
     <string name="app_name">AndroidCurso</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="txtView">[textView] Texto Standard</string>
+    <string name="txtLarge">[LargeTexto] Texto Grande</string>
+    <string name="txtMedium">[MediumText] Texto Medio</string>
+    <string name="txtSmall">[SmallText] Texto Pequeño</string>
+    <string name="tglButton">ToggleButton</string>
+    <string name="tglON">Activado</string>
+    <string name="tglOFF">Desavtivado</string>
 
 </resources>

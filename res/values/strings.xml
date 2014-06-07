@@ -4,5 +4,10 @@
     <string name="app_name">AndroidCurso</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="strTextoEjemplo">Hola, esto es un texto de ejemplo.</string>
+    <string name="strFuenteGrande">Tamaño de fuente GRANDE</string>
+    <string name="strFuentePequena">Tamaño de Fuente pequeña</string>
+    <string name="strTglText">noText</string>
+    <string name="strButton">Escribe un texto</string>
 
 </resources>

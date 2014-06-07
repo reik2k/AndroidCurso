@@ -5,15 +5,46 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.EditText;
+import android.widget.RadioGroup;
 
 
 public class MainActivity extends Activity {
 
+	RadioGroup	rad;
+	CheckBox	chk;
+	EditText	edt;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
+		
+		rad	=	(RadioGroup)findViewById(R.id.radGroup);
+		chk	=	(CheckBox)findViewById(R.id.chkBox);
+		edt	=	(EditText)findViewById(R.id.edtTexto);
+		
+		//CHECKBOX listener
+		chk.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener(){
 
+			public void onCheckedChanged(	CompoundButton buttonView,
+											boolean isChecked) 
+			{
+				
+			}});
+		
+		//RADIOGROUP listener
+		rad.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+			
+			public void onCheckedChanged(RadioGroup group, int checkedId) 
+			{
+				
+				
+			}
+		});
 		
 	}
 

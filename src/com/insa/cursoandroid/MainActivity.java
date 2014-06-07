@@ -2,13 +2,15 @@ package com.insa.cursoandroid;
 
 import com.insa.cursoandroid.R;
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 
@@ -33,19 +35,49 @@ public class MainActivity extends Activity {
 			public void onCheckedChanged(	CompoundButton buttonView,
 											boolean isChecked) 
 			{
-				
-			}});
-		
-		//RADIOGROUP listener
-		rad.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-			
-			public void onCheckedChanged(RadioGroup group, int checkedId) 
-			{
-				
-				
+				if(isChecked)
+				{
+					edt.setTextSize(60);
+				}else
+					{
+						edt.setTextSize(30);
+					}
 			}
 		});
 		
+		//RADIOGROUP listener
+		rad.setOnCheckedChangeListener(
+			new RadioGroup.OnCheckedChangeListener() 
+			{
+			
+				public void onCheckedChanged(	RadioGroup group, 
+												int checkedId) 
+				{
+					RadioButton opc = (RadioButton)findViewById(checkedId);
+					
+					edt.setBackgroundColor(setColor(opc.getText().toString()));
+					
+					
+				}
+			});
+		
+	}
+	
+	private int setColor(String opc)
+	{
+		Log.i("setColor","START The color is: "+opc);
+		
+		if(opc.contains("Verde"))
+		{
+			return Color.GREEN;
+		}
+		if(opc.contains("Azul"))
+		{
+			return Color.BLUE;
+		}else
+			{
+			return Color.RED;
+			}
 	}
 
 	@Override

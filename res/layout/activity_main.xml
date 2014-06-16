@@ -28,4 +28,13 @@
         android:contentDescription="@string/strDescriptionLogo"
         android:src="@drawable/bad_chicken" />
 
+    <Button
+        android:id="@+id/btnWarning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/strWarning" />
+
 </RelativeLayout>

@@ -5,7 +5,9 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,22 +16,34 @@ import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
-	Button			btn;
-	CharSequence[]	items 			= 	{"Zamora", "León", "Salamanca"};
-	boolean[]		itemsChecked	=	new boolean[items.length];
+	private Button	btnWarning 	= null;
+	private Button	btnQuestion	= null;
+	
+	private static final int WARNING_BOX 	= 1;
+	private static final int QUESTION_BOX 	= 0;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
 		
-		btn = (Button) findViewById(R.id.btnDialog);
+		btnWarning = (Button) findViewById(R.id.btnWarning);
+		btnQuestion = (Button) findViewById(R.id.btnDialog);
 		
-		btn.setOnClickListener(new View.OnClickListener() {
+		btnWarning.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) 
 			{
-				showDialog(0);
+				showDialog(WARNING_BOX);
+				
+			}
+		});
+		btnQuestion.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) 
+			{
+				showDialog(QUESTION_BOX);
 				
 			}
 		});
@@ -38,67 +52,72 @@ public class MainActivity extends Activity {
 	
 	protected Dialog onCreateDialog(int id)
 	{
-		switch(0)
+		Dialog dialog = null;
+		
+		switch(id)
 		{
-		case 0:
+		case QUESTION_BOX:
 			{
-				return new AlertDialog.Builder(this)
-							.setIcon(R.drawable.ic_launcher)
-							.setTitle("Titulo")
-							.setPositiveButton("Accept", 
-								new DialogInterface.OnClickListener() 
-								{
-									
-									public void onClick(DialogInterface dialog, 
-														int which) 
-									{
-										Toast.makeText(
-												getBaseContext(),
-												"You have just pushed"
-												+ "Accept Button", 
-												Toast.LENGTH_SHORT).show();
-										
-									}
-								})
-							.setNegativeButton("Cancel", 
-								new DialogInterface.OnClickListener() {
-									
-									public void onClick(DialogInterface dialog, 
-														int which) 
-									{
-										Toast.makeText(
-												getBaseContext(),
-												"You have just pushed it"
-												+ "Cancel Button",  
-												Toast.LENGTH_SHORT).show();
-										
-									}
-								})
-								.setMultiChoiceItems(items, itemsChecked, 
-									new DialogInterface
-									.OnMultiChoiceClickListener() 
-									{
-										
-										public void onClick(
-												DialogInterface dialog, 
-												int which, 
-												boolean isChecked) 
-										{
-											Toast.makeText(
-													getBaseContext(),
-													items[which] 
-													+ (isChecked ?
-													" is Selected":
-													" is not Selected"),  
-													Toast.LENGTH_SHORT).show();
-											
-										}
-									})
-							.create();
+				dialog = createQuestionDialog();
+				break;
+			}
+		case WARNING_BOX:
+			{
+				dialog = createWarningDialog();
+				break;
 			}
 		}
-		return null;
+		return dialog;
 	}
+	
+	private Dialog createWarningDialog()
+	{
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		
+		builder.setTitle("Information");
+		builder.setMessage("This is a warning message, for example.");
+		
+		builder.setPositiveButton("Accept", new OnClickListener() {
+			
+			public void onClick(DialogInterface dialog, int which) 
+			{
+				// close the Dialog Alert
+				dialog.cancel();
+			}
+		});
+		return builder.create();
+	}
+	
+	private Dialog createQuestionDialog()
+	{
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		
+		builder.setTitle("Confirmation");
+		builder.setMessage("Would you like formating your Device?");
+		
+		builder.setNegativeButton("Cancel", new OnClickListener() {
+			
+			public void onClick(DialogInterface dialog, int which) 
+			{
+				Log.i("QUESTION","The user hasn't accepted the format action");
+				// close the Dialog Alert
+				dialog.cancel();
+				
+			}
+		});		
+		builder.setPositiveButton("Accept", new OnClickListener() {
+			
+			public void onClick(DialogInterface dialog, int which) 
+			{
+				Log.i("QUESTION","The user has accepted the format action");
+				// close the Dialog Alert
+				dialog.cancel();
+			}
+		});
+		
+		return builder.create();
+	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

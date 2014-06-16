@@ -6,52 +6,6 @@
     tools:context="com.insa.cursoandroid.MainActivity"
     tools:ignore="MergeRootFrame" >
 
-    <RadioGroup
-        android:id="@+id/radGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
 
-        <RadioButton
-            android:id="@+id/radVerde"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/strVerde" />
-
-        <RadioButton
-            android:id="@+id/radAzul"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/strAzul" />
-
-        <RadioButton
-            android:id="@+id/radRojo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/strRojo" />
-    </RadioGroup>
-
-    <CheckBox
-        android:id="@+id/chkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/radGroup"
-        android:text="@string/strCheckBox" />
-
-    <EditText
-        android:id="@+id/edtTexto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/chkBox"
-        android:ems="10"
-        android:inputType="text" >
-
-        <requestFocus />
-    </EditText>
 
 </RelativeLayout>

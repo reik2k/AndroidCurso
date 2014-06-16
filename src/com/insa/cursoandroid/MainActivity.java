@@ -2,9 +2,12 @@ package com.insa.cursoandroid;
 
 import com.insa.cursoandroid.R;
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class MainActivity extends Activity {
@@ -16,7 +19,30 @@ public class MainActivity extends Activity {
 
 		
 	}
-
+	public void call2intent(View view)
+	{
+		Intent i = null;
+		
+		switch(view.getId())
+		{
+		case R.id.btnNavigator:
+			i = new Intent(	Intent.ACTION_VIEW, 
+							Uri.parse("http://www.google.es"));
+			startActivity(i);
+			
+			break;
+		case R.id.btnCallContact:
+			i = new Intent(	Intent.ACTION_CALL, 
+					Uri.parse("tel: (+34) 675666114"));
+			startActivity(i);
+			break;
+		case R.id.btnCall:
+			i = new Intent(	Intent.ACTION_VIEW, 
+					Uri.parse("content://contacts/people"));
+			startActivity(i);
+			break;
+		}
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 

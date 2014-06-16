@@ -8,5 +8,7 @@
     <string name="strAzul">Azul</string>
     <string name="strRojo">Rojo</string>
     <string name="strCheckBox">Texto Font Size</string>
+    <string name="strDialog">Show Dialog Box</string>
+    <string name="strDescriptionLogo">BussinesLogo</string>
 
 </resources>

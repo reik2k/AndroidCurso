@@ -6,6 +6,26 @@
     tools:context="com.insa.cursoandroid.MainActivity"
     tools:ignore="MergeRootFrame" >
 
+    <Button
+        android:id="@+id/btnDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="false"
+        android:layout_marginTop="54dp"
+        android:text="@string/strDialog" />
 
+    <ImageView
+        android:id="@+id/logoChicken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="false"
+        android:layout_below="@id/btnDialog"
+        android:contentDescription="@string/strDescriptionLogo"
+        android:src="@drawable/bad_chicken" />
 
 </RelativeLayout>

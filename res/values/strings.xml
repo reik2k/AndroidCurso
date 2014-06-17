@@ -8,5 +8,9 @@
     <string name="strNavigator">Internet</string>
     <string name="strMakeCall">Make a call</string>
     <string name="strContactCall">Make a contact call</string>
+    <string name="strDial">Action DIAL</string>
+    <string name="strGeoMap">Geo Map View</string>
+    <string name="strGeoQuery">Geo Query</string>
+    <string name="strCamera">Camera</string>
 
 </resources>

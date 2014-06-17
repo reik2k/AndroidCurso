@@ -31,12 +31,12 @@ public class MainActivity extends Activity {
 			startActivity(i);
 			
 			break;
-		case R.id.btnCallContact:
+		case R.id.btnCall:
 			i = new Intent(	Intent.ACTION_CALL, 
 					Uri.parse("tel: (+34) 675666114"));
 			startActivity(i);
 			break;
-		case R.id.btnCall:
+		case R.id.btnCallContact:
 			i = new Intent(	Intent.ACTION_VIEW, 
 					Uri.parse("content://contacts/people"));
 			startActivity(i);

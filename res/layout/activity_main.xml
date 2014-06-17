@@ -37,4 +37,40 @@
         android:onClick="call2intent"
         android:text="@string/strContactCall" />
 
+    <Button
+        android:id="@+id/btnActionDial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btnCallContact"
+        android:text="@string/strDial" />
+
+    <Button
+        android:id="@+id/btnActionGeoView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btnActionDial"
+        android:text="@string/strGeoMap" />
+
+    <Button
+        android:id="@+id/btnGeoQuery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btnActionGeoView"
+        android:text="@string/strGeoQuery" />
+
+    <Button
+        android:id="@+id/btnCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btnGeoQuery"
+        android:text="@string/strCamera" />
+
 </RelativeLayout>

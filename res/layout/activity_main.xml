@@ -44,6 +44,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/btnCallContact"
+        android:onClick="call2intent"
         android:text="@string/strDial" />
 
     <Button
@@ -53,6 +54,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/btnActionDial"
+        android:onClick="call2intent"
         android:text="@string/strGeoMap" />
 
     <Button
@@ -62,6 +64,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/btnActionGeoView"
+        android:onClick="call2intent"
         android:text="@string/strGeoQuery" />
 
     <Button
@@ -71,6 +74,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/btnGeoQuery"
+        android:onClick="call2intent"
         android:text="@string/strCamera" />
 
 </RelativeLayout>

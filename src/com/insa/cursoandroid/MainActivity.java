@@ -5,9 +5,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
@@ -18,6 +20,18 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main); 
 
 		
+	}
+	@Override
+	protected void onActivityResult(	int requestCode, 
+										int resultCode, 
+										Intent data) 
+	{
+		if(resultCode == Activity.RESULT_OK && requestCode == 0)
+		{
+			String result = data.toURI();
+			Log.i("Camera", "Ha entrado");
+			Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
+		}
 	}
 	public void call2intent(View view)
 	{
@@ -41,8 +55,29 @@ public class MainActivity extends Activity {
 					Uri.parse("content://contacts/people"));
 			startActivity(i);
 			break;
+		case R.id.btnActionDial:
+			i = new Intent(	Intent.ACTION_DIAL, 
+					Uri.parse("tel: (+34) 675666114"));
+			startActivity(i);
+			break;
+		case R.id.btnActionGeoView:
+			i = new Intent(	Intent.ACTION_VIEW, 
+					Uri.parse("geo:50.123,7.1434?z=19"));
+			startActivity(i);
+			break;
+		case R.id.btnGeoQuery:
+			i = new Intent(	Intent.ACTION_VIEW, 
+					Uri.parse("geo:0,0?q=query"));
+			startActivity(i);
+			break;
+		case R.id.btnCamera:
+			i = new Intent(	"android.media.action.IMAGE_CAPTURE");
+			Log.i("Camera","intentURI: "+i.toURI());
+			startActivityForResult(i, 0);
+			break;
 		}
 	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 

@@ -1,80 +1,92 @@
 package com.insa.cursoandroid; 
 
 import com.insa.cursoandroid.R;
+
+import android.R.string;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	
-	private CheckBox 	chk;
-	private RadioButton	rdSingle;
-	private RadioButton	rdMarried;
-	private RadioButton	rdOther;
-	private EditText	edtTextAge;
-	private EditText	edtTextState;
-	private Button		btn;
-	
+	private EditText			edt;
+	private Button				btn;
+	private	int					obj;
+	private	CharSequence[]		list	=	{"Soltero","Casado","Otro"};
+	private	String				aux;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
 		
-		//Seleccionamos el Botón al iniciar la activity
-		btn = (Button)findViewById(R.id.btnLegalAge);
 		
+		
+		
+		//Seleccionamos el Botón al iniciar la activity
+		btn = (Button)findViewById(R.id.btnAction);
+		edt	= (EditText)findViewById(R.id.edtResult);
+		
+		edt.setText("");
 		//Declaramos un listener para manejar el boton
 		btn.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) 
 			{
-				//Declaramos los widgets a utilizar
-				chk 			= (CheckBox)findViewById(R.id.chkLegalAge);
-				rdSingle		= (RadioButton)findViewById(R.id.radSingle);
-				rdMarried		= (RadioButton)findViewById(R.id.radMarried);
-				rdOther			= (RadioButton)findViewById(R.id.radOther);
-				edtTextAge		= (EditText)findViewById(R.id.edtLegaAge);
-				edtTextState 	= (EditText)findViewById(R.id.edtCivilState);
-				
-				//Borramos el contenido anterior de los TEXTview.
-				edtTextAge.setText("");
-				edtTextState.setText("");
-				
-				if(chk.isChecked())
-				{
-					edtTextAge.setText("Eres Mayor de Edad.");
-				}else
-					{
-						edtTextAge.setText("NO Eres Mayor de Edad.");
-					}
-				
-				if(rdMarried.isChecked())
-				{
-					edtTextState.setText("Estás Casado.");
-				}
-				
-				if(rdSingle.isChecked())
-				{
-					edtTextState.setText("Estás Soltero");
-				}
-				if(rdOther.isChecked())
-				{
-					edtTextState.setText("Tu estado civil es indefinido");
-				}
+				showDialog(0);
 			}
 		});
-		
-		
 	}
+	protected Dialog onCreateDialog(int id)
+	{
+		switch (id) 
+		{
+		case 0:
+			return new AlertDialog.Builder(this)
+			.setIcon(R.drawable.ic_launcher)
+			.setTitle("Selecciona un Item")
+			.setPositiveButton("Accept", new DialogInterface.OnClickListener() 
+			{
+				public void onClick(DialogInterface dialog, int which) 
+				{
+					edt.setText(aux);
+					dialog.cancel();
+				}
+			})
+			.setNegativeButton("Cancel", new DialogInterface.OnClickListener() 
+			{
+				
+				public void onClick(DialogInterface dialog, int which) 
+				{
+					Toast.makeText(	getBaseContext(), 
+									"cancel", 
+									Toast.LENGTH_SHORT).show();
+					
+				}
+			})
+			.setSingleChoiceItems(list, obj, 
+					new DialogInterface.OnClickListener() 
+				{
+				
+					public void onClick(DialogInterface dialog, int which) 
+					{
+						aux = list[which].toString();
+					}
+			})
+			.create();
 
+		default:
+			break;
+		}
+		return null;
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 

@@ -6,75 +6,30 @@
     tools:context="com.insa.cursoandroid.MainActivity"
     tools:ignore="MergeRootFrame" >
 
-    <RadioGroup
-        android:id="@+id/rdgCivilState"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/chkLegalAge" >
-
-        <RadioButton
-            android:id="@+id/radSingle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/strSingle" />
-
-        <RadioButton
-            android:id="@+id/radMarried"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/strMarried" />
-
-        <RadioButton
-            android:id="@+id/radOther"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/strOther" />
-    </RadioGroup>
-
     <Button
-        android:id="@+id/btnLegalAge"
+        android:id="@+id/btnAction"
         style="@style/AppTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/rdgCivilState"
+        android:layout_alignParentTop="true"
         android:layout_centerInParent="false"
         android:drawableTop="@drawable/icono"
         android:gravity="center"
         android:paddingTop="30dp" />
 
     <EditText
-        android:id="@+id/edtLegaAge"
+        android:id="@+id/edtResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/btnLegalAge"
+        android:layout_below="@+id/btnAction"
         android:ems="10"
         android:inputType="text" >
 
         <requestFocus />
     </EditText>
-
-    <EditText
-        android:id="@+id/edtCivilState"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/edtLegaAge"
-        android:ems="10"
-        android:inputType="text" />
-
-    <CheckBox
-        android:id="@+id/chkLegalAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/strLegalAge" />
 
 </RelativeLayout>

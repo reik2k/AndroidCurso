@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/checkBox1" >
+        android:layout_below="@+id/chkLegalAge" >
 
         <RadioButton
             android:id="@+id/radSingle"
@@ -70,7 +70,7 @@
         android:inputType="text" />
 
     <CheckBox
-        android:id="@+id/checkBox1"
+        android:id="@+id/chkLegalAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"

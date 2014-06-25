@@ -10,5 +10,9 @@
     <string name="strOther">Otros</string>
     <string name="strLegalAge">Mayor de Edad</string>
     <string name="strConfirm">confirmar</string>
+    <string name="strNavegar">Navegador</string>
+    <string name="strMarcar">Marcar</string>
+    <string name="strContactos">Ver Contactos</string>
+    <string name="strTextView">Introduce un Nombre o Página Web</string>
 
 </resources>

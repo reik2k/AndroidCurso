@@ -1,12 +1,9 @@
 package com.insa.cursoandroid; 
 
 import com.insa.cursoandroid.R;
-
-import android.R.string;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,75 +14,118 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	
-	private EditText			edt;
-	private Button				btn;
-	private	int					obj;
-	private	CharSequence[]		list	=	{"Soltero","Casado","Otro"};
-	private	String				aux;
+	private EditText	edt;
+	private Button		btnNavegador;
+	private Button		btnMarcar;
+	private Button		btnContactos;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
 		
-		
-		
-		
 		//Seleccionamos el Botón al iniciar la activity
-		btn = (Button)findViewById(R.id.btnAction);
-		edt	= (EditText)findViewById(R.id.edtResult);
+		btnNavegador = (Button)findViewById(R.id.btnNavegar);
+		btnMarcar = (Button)findViewById(R.id.btnMarcar);
+		btnContactos = (Button)findViewById(R.id.btnContactos);
 		
-		edt.setText("");
+		edt	= (EditText)findViewById(R.id.editText1);
+		
 		//Declaramos un listener para manejar el boton
-		btn.setOnClickListener(new View.OnClickListener() {
+		btnNavegador.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) 
 			{
-				showDialog(0);
+				call_Intent(btnNavegador);
+			}
+		});
+		
+		//Declaramos un listener para manejar el boton
+		btnMarcar.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) 
+			{
+				call_Intent(btnMarcar);
+			}
+		});
+		
+		//Declaramos un listener para manejar el boton
+		btnContactos.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) 
+			{
+				call_Intent(btnContactos);
 			}
 		});
 	}
-	protected Dialog onCreateDialog(int id)
+	protected void call_Intent(View view)
 	{
-		switch (id) 
+		Intent i 	= null;
+		String text = edt.getText().toString();
+		
+		switch(view.getId())
 		{
-		case 0:
-			return new AlertDialog.Builder(this)
-			.setIcon(R.drawable.ic_launcher)
-			.setTitle("Selecciona un Item")
-			.setPositiveButton("Accept", new DialogInterface.OnClickListener() 
+		case R.id.btnNavegar:
+			
+			if(!text.isEmpty())
 			{
-				public void onClick(DialogInterface dialog, int which) 
+				text = "http://" + text;
+				i = new Intent(Intent.ACTION_VIEW,Uri.parse(text));
+				startActivityForResult(i, 1);
+			}else
 				{
-					edt.setText(aux);
-					dialog.cancel();
-				}
-			})
-			.setNegativeButton("Cancel", new DialogInterface.OnClickListener() 
-			{
-				
-				public void onClick(DialogInterface dialog, int which) 
-				{
-					Toast.makeText(	getBaseContext(), 
-									"cancel", 
+					Toast.makeText( getBaseContext(), 
+									"No Destination", 
 									Toast.LENGTH_SHORT).show();
-					
 				}
-			})
-			.setSingleChoiceItems(list, obj, 
-					new DialogInterface.OnClickListener() 
+			break;
+		case R.id.btnMarcar:
+			if(!text.isEmpty())
+			{
+				text = "tel:" + text;
+				i = new Intent(Intent.ACTION_VIEW,Uri.parse(text));
+				startActivityForResult(i, 2);
+			}else
 				{
-				
-					public void onClick(DialogInterface dialog, int which) 
-					{
-						aux = list[which].toString();
-					}
-			})
-			.create();
-
-		default:
+					Toast.makeText( getBaseContext(), 
+									"No Telephone", 
+									Toast.LENGTH_SHORT).show();
+				}
+			break;
+		case R.id.btnContactos:
+			i = new Intent(	Intent.ACTION_VIEW,
+							Uri.parse("content://contacts/people/"));
+			startActivityForResult(i, 3);
 			break;
 		}
-		return null;
+		
+		
+	}
+	public void onActivityResult(int requestCode,int resultCode, Intent data)
+	{
+
+		if(resultCode == Activity.RESULT_CANCELED)
+		{
+			switch (requestCode) {
+			case 1:
+				Toast.makeText(	getBaseContext(), 
+								"Internet Back", 
+								Toast.LENGTH_SHORT).show();
+				break;
+			case 2:
+				Toast.makeText(	getBaseContext(), 
+								"Call Back", 
+								Toast.LENGTH_SHORT).show();
+				break;
+			default:
+				Toast.makeText(	getBaseContext(), 
+								"Contact Guide Back", 
+								Toast.LENGTH_SHORT).show();
+				break;
+			}
+			edt.setText("");
+		}
+		
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

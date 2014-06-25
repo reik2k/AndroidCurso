@@ -7,25 +7,47 @@
     tools:ignore="MergeRootFrame" >
 
     <Button
-        android:id="@+id/btnAction"
-        style="@style/AppTheme"
+        android:id="@+id/btnNavegar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_centerInParent="false"
-        android:drawableTop="@drawable/icono"
-        android:gravity="center"
-        android:paddingTop="30dp" />
+        android:text="@string/strNavegar" />
 
-    <EditText
-        android:id="@+id/edtResult"
+    <Button
+        android:id="@+id/btnMarcar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/btnAction"
+        android:layout_below="@+id/btnNavegar"
+        android:text="@string/strMarcar" />
+
+    <Button
+        android:id="@+id/btnContactos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btnMarcar"
+        android:text="@string/strContactos" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btnContactos"
+        android:text="@string/strTextView" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView1"
         android:ems="10"
         android:inputType="text" >
 

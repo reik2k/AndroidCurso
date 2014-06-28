@@ -7,4 +7,29 @@
     tools:context="com.insa.cursoandroid.MainActivity"
     tools:ignore="MergeRootFrame" >
 
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="Esto es un texto de ejemplo" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:padding="30dp"
+        android:text="Esto es un texto de ejemplo" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="Esto es un texto de ejemplo" />
+
 </LinearLayout>

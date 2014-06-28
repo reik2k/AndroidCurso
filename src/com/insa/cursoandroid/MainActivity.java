@@ -31,7 +31,14 @@ public class MainActivity extends Activity {
 	
 	private String setExample1()
 	{
-		return "";
+		int ent 	= 10;
+		String aux 	= "";
+		
+		for (int i = 5; i>-6 ; i--)
+		{
+			aux += ent/i;
+		}
+		return aux;
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

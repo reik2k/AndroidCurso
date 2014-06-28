@@ -5,15 +5,20 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
-
+	static	TextView	txt;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
 
+		//Decalramos el TEXTVIEW para sacar los resultados del ejemplo.
+		txt = (TextView)findViewById(R.id.txtResult);
+		
 		
 	}
 

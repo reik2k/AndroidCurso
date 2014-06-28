@@ -24,17 +24,25 @@ public class MainActivity extends Activity {
 		result = "EJEMPLO1" + NEW_LINE;
 		result += "-----------------------------" + NEW_LINE;
 		
-		result += setExample();
+		result += setExample1();
 		
 		result += NEW_LINE + "EJEMPLO2" + NEW_LINE;
 		result += "-----------------------------" + NEW_LINE;
 		
-		result += setExample1();
+		result += setExample2();
+		
+		result += NEW_LINE + "EJEMPLO3" + NEW_LINE;
+		result += "-----------------------------" + NEW_LINE;
+		
+		result += setExample3();
 		
 		txt.setText(result);
 	}
-	
-	private String setExample1()
+	private String setExample3()
+	{
+		return null;
+	}
+	private String setExample2()
 	{
 		String numBinary		=	"101111";
 		String numOctal			=	"57";
@@ -50,7 +58,7 @@ public class MainActivity extends Activity {
 		
 		return resultExample1;
 	}
-	private String setExample()
+	private String setExample1()
 	{
 		String 	strScreen;
 		Integer	num1	= 	new Integer("22");

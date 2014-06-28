@@ -5,18 +5,52 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
-
+	
+	TextView	txt;
+	static	final String NEW_LINE = "\n"; 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
 
+		setExample();
+	}
+	
+	private void setExample()
+	{
+		String 	strScreen;
+		String 	strAux;
+		int		number;
+		int		result;
+		
+		txt = (TextView)findViewById(R.id.txtResult);
+		
+		strAux 	= "125";
+		number 	= 10;
+		
+		result = Integer.parseInt(strAux) + number;
+		
+		strScreen	=	number + result + NEW_LINE;
+		strScreen	+= 	strAux + result	+ NEW_LINE;
+		
+		if(number + result > 130)
+		{
+			number ++;
+		}else
+		{
+			number--;
+		}
+		
+		strScreen += number;
+		
+		txt.setText(strScreen);
 		
 	}
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 

@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
 		//Decalramos el TEXTVIEW para sacar los resultados del ejemplo.
 		txt = (TextView)findViewById(R.id.txtResult);
 		
-		result = "EJEMPLO1: EXCEPCIONES" + NEW_LINE;
+		result = "EJEMPLO1: ARRAYS" + NEW_LINE;
 		result += "-----------------------------" + NEW_LINE;
 		
 		result += setExample1();
@@ -31,20 +31,8 @@ public class MainActivity extends Activity {
 	
 	private String setExample1()
 	{
-		int ent 	= 10;
 		String aux 	= "";
-		try{
-			for (int i = 5; i>-6 ; i--)
-			{
-				aux += ent/i + NEW_LINE;
-			}
-		}catch(ArithmeticException ex)
-		{
-			aux += " FATAL ERROR: divide by zero i=" + 0 + " ent=" + ent;
-		}finally
-		{
-			aux += NEW_LINE + "I'm in finally method";
-		}
+		
 		
 		return aux;
 	}

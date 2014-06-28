@@ -9,7 +9,9 @@ import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
-	static	TextView	txt;
+	static	TextView		txt;
+	static	String			result 		= new String();
+	static  final String 	NEW_LINE 	= new String("\n");
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +21,18 @@ public class MainActivity extends Activity {
 		//Decalramos el TEXTVIEW para sacar los resultados del ejemplo.
 		txt = (TextView)findViewById(R.id.txtResult);
 		
+		result = "EJEMPLO1: EXCEPCIONES" + NEW_LINE;
+		result += "-----------------------------" + NEW_LINE;
 		
+		result += setExample1();
+		
+		txt.setText(result);
 	}
-
+	
+	private String setExample1()
+	{
+		return "";
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 

@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
 		Animal 	aniToro	= new Toro();
 		aniToro.comer();
 		
-		
+		result += "Mirar el LOGCAT en Eclipse";
 		txt.setText(result);
 	}
 	

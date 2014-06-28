@@ -4,10 +4,13 @@ import android.util.Log;
 
 public class Vaca extends Animal
 {
+	public void animaleando()
+	{
+		super.animaleando();
+	}
 	public void comer()
 	{
 		Log.i("SubClase Vaca","El animial Vaca come hierba");
-		
 	}
 	public void vaquenado()
 	{

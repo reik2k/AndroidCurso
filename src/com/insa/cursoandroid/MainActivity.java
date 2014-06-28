@@ -31,8 +31,38 @@ public class MainActivity extends Activity {
 	
 	private String setExample1()
 	{
-		String aux 	= "";
+		String 	aux 			= "";
+		int[] 	enteros 		= {1,2,4};
+		int 	enterosBis[]	= new int[13];
 		
+		enterosBis[0]=1;
+		enterosBis[1]=10;
+		enterosBis[2]=100;
+
+		Integer	integer[]	= {new Integer(5),new Integer(8)};
+		
+		String nombres[] = {"Abel","Pedro"};
+		
+		aux	+="Número de elementos de cada array: " + 	NEW_LINE;
+		aux	+="De enteros: " + enteros.length 		+	NEW_LINE;
+		aux	+="De enterosBis: " + enterosBis.length +	NEW_LINE;
+		aux	+="De integer: " + integer.length 		+	NEW_LINE;
+		aux	+="De nombre: " + nombres.length 		+	NEW_LINE;
+		
+		
+//		for(int i = 0; i<13; i++)
+//		{
+//			enterosBis[i] = (i*2)/3;
+//		}
+		
+		for(int i=0;i<enteros.length;i++)
+			aux	+= enteros[i] 		+ NEW_LINE;
+		for(int i=0;i<enterosBis.length;i++)
+			aux	+= enterosBis[i] 	+ NEW_LINE;
+		for(int i=0;i<integer.length;i++)
+			aux+= integer[i] 		+ NEW_LINE;
+		for(int i=0;i<nombres.length;i++)
+			aux	+= nombres[i] 		+ NEW_LINE;
 		
 		return aux;
 	}

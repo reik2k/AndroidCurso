@@ -11,9 +11,9 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
 	
 	TextView				txt;
-	static	final String 	NEW_LINE = "\n"; 
-	static	String			result;
-	
+	static	final String 	NEW_LINE 	= "\n"; 
+	static	String			result 		= new String();
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,8 +36,31 @@ public class MainActivity extends Activity {
 		
 		result += setExample3();
 		
+		result += NEW_LINE + "EJEMPLO4" + NEW_LINE;
+		result += "-----------------------------" + NEW_LINE;
+		
+		result += setExample4();
+		
 		txt.setText(result);
 	}
+	
+	private String setExample4()
+	{
+		String str = new String();
+		
+		str = "expedición";
+		 
+		return 	"str = "+ str 								+ NEW_LINE+
+				"lenght(str): "+ str.length() 				+ NEW_LINE +
+				"idexOf(x,str.lenght): " + str.indexOf("x", str.length()) 
+															+ NEW_LINE + 
+				"replace(x-->s): " + str.replace("x", "s") 	+ NEW_LINE + 
+				"replace(s-->x): " + str.replace("s", "x") 	+ NEW_LINE + 
+				"idexOf(d,4): " + str.indexOf("d", 4)		+ NEW_LINE +
+				"charAt(4): " + str.charAt(4) 				+ NEW_LINE +
+				"";
+	}
+	
 	private String setExample3()
 	{
 		Character chr = new Character('a');

@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="LinearLyout horizontal.gravity() = center" />
+        android:text="LinearLayout horizontal.gravity() = center" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="LinearLyout vertical.gravity() = center" />
+        android:text="LinearLayout vertical.gravity() = center" />
 
     <LinearLayout
         android:layout_width="match_parent"

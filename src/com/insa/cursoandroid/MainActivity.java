@@ -32,38 +32,45 @@ public class MainActivity extends Activity {
 	private String setExample1()
 	{
 		String 	aux 			= "";
-		int[] 	enteros 		= {1,2,4};
-		int 	enterosBis[]	= new int[13];
 		
-		enterosBis[0]=1;
-		enterosBis[1]=10;
-		enterosBis[2]=100;
-
-		Integer	integer[]	= {new Integer(5),new Integer(8)};
+		//Declaramos y construimos un array 2D
+		//Tiene dos elementos que son arrays como los anteriores
+		String[] [] miFamilia=new String[2][];
 		
-		String nombres[] = {"Abel","Pedro"};
+		//Iniciamos el array:
+		miFamilia[0]=new String[2];
+		miFamilia[1]=new String[4];
 		
-		aux	+="Número de elementos de cada array: " + 	NEW_LINE;
-		aux	+="De enteros: " + enteros.length 		+	NEW_LINE;
-		aux	+="De enterosBis: " + enterosBis.length +	NEW_LINE;
-		aux	+="De integer: " + integer.length 		+	NEW_LINE;
-		aux	+="De nombre: " + nombres.length 		+	NEW_LINE;
+		//Inicializamos los arrays de primera dimensión
+		miFamilia[0][0]="Jesus";
+		miFamilia[0][1]="Miguel";
 		
+		//la segunda dimensión:
+		miFamilia[1][0]="Encarna";
+		miFamilia[1][1]="Lola";
+		miFamilia[1][2]="Manuel";
+		miFamilia[1][3]="Antonio";
 		
-//		for(int i = 0; i<13; i++)
-//		{
-//			enterosBis[i] = (i*2)/3;
-//		}
+		aux += "Longitud del Array Bidimensional"	+ NEW_LINE;
+		aux	+= "Grupo 1: " + miFamilia[0].length 	+ NEW_LINE;
+		aux	+= "Grupo 2: " + miFamilia[1].length 	+ NEW_LINE;
 		
-		for(int i=0;i<enteros.length;i++)
-			aux	+= enteros[i] 		+ NEW_LINE;
-		for(int i=0;i<enterosBis.length;i++)
-			aux	+= enterosBis[i] 	+ NEW_LINE;
-		for(int i=0;i<integer.length;i++)
-			aux+= integer[i] 		+ NEW_LINE;
-		for(int i=0;i<nombres.length;i++)
-			aux	+= nombres[i] 		+ NEW_LINE;
+		aux += "Mostramos sus elementos"			+ NEW_LINE
+				+ "GRUPO 1" + NEW_LINE;
+		for(int i = 0;i<miFamilia[0].length;i++)
+		{
+			aux += "Elemento[0]["+i+"]: "+miFamilia[0][i] + NEW_LINE;
+		}
 		
+		aux += "GRUPO 2" + NEW_LINE;
+		
+		for(int i = 0;i<miFamilia[1].length;i++)
+		{
+			aux += "Elemento[1]["+i+"]: "+miFamilia[1][i] + NEW_LINE;
+		}
+		
+		String miFam[] []=	{{"Jesus","Miguel"},
+                			{"Encarna","Lola", "Manuel","Antonio"}};
 		return aux;
 	}
 	@Override

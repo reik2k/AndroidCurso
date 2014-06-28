@@ -7,29 +7,22 @@
     tools:context="com.insa.cursoandroid.MainActivity"
     tools:ignore="MergeRootFrame" >
 
-    <EditText
-        android:id="@+id/editText1"
+    <Button
+        android:id="@+id/button1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:text="Esto es un texto de ejemplo" >
+        android:text="Button" />
 
-        <requestFocus />
-    </EditText>
-
-    <EditText
-        android:id="@+id/editText2"
+    <Button
+        android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:padding="30dp"
-        android:text="Esto es un texto de ejemplo" />
+        android:text="Button" />
 
-    <EditText
-        android:id="@+id/editText3"
+    <Button
+        android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:text="Esto es un texto de ejemplo" />
+        android:text="Button" />
 
 </LinearLayout>

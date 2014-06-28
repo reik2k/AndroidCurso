@@ -40,7 +40,12 @@ public class MainActivity extends Activity {
 	}
 	private String setExample3()
 	{
-		return null;
+		Character chr = new Character('a');
+		
+		return 	"CharValue: " 		+ chr.charValue() 	+ NEW_LINE +
+				"9 isDigit: "		+ chr.isDigit('9') 	+ NEW_LINE +
+				"C isLetter: "		+ chr.isLetter('C') + NEW_LINE +
+				"c isLoweCase: "	+ chr.isLowerCase('c');
 	}
 	private String setExample2()
 	{

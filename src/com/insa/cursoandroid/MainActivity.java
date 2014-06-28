@@ -24,30 +24,29 @@ public class MainActivity extends Activity {
 	private void setExample()
 	{
 		String 	strScreen;
-		String 	strAux;
-		int		number;
-		int		result;
+		Integer	num1	= 	new Integer("22");
+		Integer num2	= 	new Integer("100");
+		int		n1		= 	num1.intValue();
+		int		n2		= 	num2.intValue();
 		
 		txt = (TextView)findViewById(R.id.txtResult);
 		
-		strAux 	= "125";
-		number 	= 10;
+		strScreen = "La suma de num1 ("+n1+") + num2 ("+n2+") "+
+					"es igual a " + (n1+n2)+NEW_LINE;
 		
-		result = Integer.parseInt(strAux) + number;
+		strScreen += "Como la suma es: "+(n1+n2);
 		
-		strScreen	=	number + result + NEW_LINE;
-		strScreen	+= 	strAux + result	+ NEW_LINE;
-		
-		if(number + result > 130)
+		if(n1+n2>130)
 		{
-			number ++;
+			strScreen += " y es mayor a 130";
+			n1++;
 		}else
 		{
-			number--;
+			strScreen += " y es menor a 130";
+			n1--;
 		}
 		
-		strScreen += number;
-		
+		strScreen += ", entonces n1 = "+n1;
 		txt.setText(strScreen);
 		
 	}

@@ -33,11 +33,19 @@ public class MainActivity extends Activity {
 	{
 		int ent 	= 10;
 		String aux 	= "";
-		
-		for (int i = 5; i>-6 ; i--)
+		try{
+			for (int i = 5; i>-6 ; i--)
+			{
+				aux += ent/i + NEW_LINE;
+			}
+		}catch(ArithmeticException ex)
 		{
-			aux += ent/i;
+			aux += " FATAL ERROR: divide by zero i=" + 0 + " ent=" + ent;
+		}finally
+		{
+			aux += NEW_LINE + "I'm in finally method";
 		}
+		
 		return aux;
 	}
 	@Override

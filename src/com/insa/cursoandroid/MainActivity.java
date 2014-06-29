@@ -16,9 +16,9 @@ public class MainActivity extends Activity {
 
 		int currentVersion = android.os.Build.VERSION.SDK_INT;
 		
-		if(currentVersion < android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+		if(currentVersion < android.os.Build.VERSION_CODES.ECLAIR_MR1)
 		{
-			//Viejos comandos
+			//No soportado Versión por debajo de la API 7 v2.1
 		}else
 			{
 				//nuevos comandos

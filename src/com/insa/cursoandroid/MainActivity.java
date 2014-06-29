@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
@@ -62,6 +63,23 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+	@Override
+	public void onSaveInstanceState(Bundle estado) 
+	{
+		estado.putString("ID", "Este valor se ha guardado tras la destrucción"
+								+	"de la actividad.");
+		super.onSaveInstanceState(estado);
+	}
+	
+	@Override
+	public void onRestoreInstanceState(Bundle estado) 
+	{
+		super.onRestoreInstanceState(estado);
+		
+		Toast.makeText(	getBaseContext(), 
+						estado.getString("ID"), 
+						Toast.LENGTH_SHORT).show();
+	}
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will

@@ -4,8 +4,11 @@ import com.insa.cursoandroid.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.Toast;
 
 
@@ -17,6 +20,28 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main); 
 
 		Log.d("onCreateState", "Estamos en el estado de Creación");
+		
+		detectDisplay();
+		
+	}
+	
+	private void detectDisplay()
+	{
+		WindowManager wm 	= getWindowManager();
+		
+		Display d 			= wm.getDefaultDisplay();
+		EditText edt1		=(EditText)findViewById(R.id.editText1);
+		EditText edt2		=(EditText)findViewById(R.id.editText2);
+		
+		if(d.getWidth() < d.getHeight())
+		{
+			edt2.setText("");
+			edt1.setText("Vertical");
+		}else
+			{
+				edt1.setText("");
+				edt2.setText("Horizontal");
+			}
 	}
 	
 	@Override
@@ -30,6 +55,8 @@ public class MainActivity extends Activity {
 	{
 		Log.d("onResume","Estamos en el estado de Volver");
 		super.onResume();
+		
+		detectDisplay();
 	}
 	@Override
 	public void onPause()

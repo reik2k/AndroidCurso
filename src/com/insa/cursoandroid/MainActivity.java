@@ -2,13 +2,17 @@ package com.insa.cursoandroid;
 
 import com.insa.cursoandroid.R;
 import android.app.Activity;
+import android.app.ActionBar.LayoutParams;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -17,12 +21,42 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main); 
-
+		
+		//Como crearemos el Layout a mano no es necesario
+		//setContentView(R.layout.activity_main); 
+		
 		Log.d("onCreateState", "Estamos en el estado de Creación");
 		
+		//Parámetros para los controleas a crear
+		LayoutParams params	=	new LayoutParams(	
+										LayoutParams.WRAP_CONTENT,
+										LayoutParams.WRAP_CONTENT);
 		
+		//Declaramos el layout
+		LinearLayout layout = new LinearLayout(this);
+		layout.setOrientation(LinearLayout.VERTICAL);
 		
+		//Creamos un textview
+		TextView txt = new TextView(this);
+		txt.setText("Esto es un TextView creado a código.");
+		txt.setLayoutParams(params);
+		
+		//Crear un botón
+		Button btn = new Button(this);
+		btn.setText("Botón creado a Código");
+		btn.setLayoutParams(params);
+		
+		//Los añadimos al layout
+		layout.addView(txt);
+		layout.addView(btn);
+		
+		//Declaramos los parámetros del layout
+		LinearLayout.LayoutParams paramsLayout = 
+				new LinearLayout.LayoutParams(	LayoutParams.WRAP_CONTENT,
+												LayoutParams.WRAP_CONTENT);
+		
+		//Los cramos el layout
+		this.addContentView(layout, paramsLayout);	
 	}
 	
 	@Override

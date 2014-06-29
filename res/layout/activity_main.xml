@@ -1,4 +1,4 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
@@ -6,135 +6,31 @@
     tools:context="com.insa.cursoandroid.MainActivity"
     tools:ignore="MergeRootFrame" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" >
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="TextView" />
 
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nombre" />
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1" >
 
-        <EditText
-            android:id="@+id/editText1"
+        <Button
+            android:id="@+id/button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10" />
+            android:text="Button" />
 
-        <TextView
-            android:id="@+id/textView2"
+        <ImageView
+            android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="apellidos" />
-		<EditText
-	        android:id="@+id/editText2"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
-	        android:ems="10" />
+            android:src="@drawable/bad_chicken" />
 
-		<TextView
-		    android:id="@+id/textView3"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:text="correo" />
+    </FrameLayout>
 
-		<EditText
-		    android:id="@+id/editText3"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:ems="10" >
-
-		    <requestFocus />
-		</EditText>
-
-		<TextView
-		    android:id="@+id/textView4"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:text="edad" />
-
-		<EditText
-		    android:id="@+id/editText4"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:ems="10" />
-
-		<TextView
-		    android:id="@+id/textView5"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:text="telefono" />
-
-		<EditText
-		    android:id="@+id/editText5"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:ems="10" />
-
-		<TextView
-		    android:id="@+id/textView6"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:text="fecha nacimiento" />
-
-		<EditText
-		    android:id="@+id/editText6"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:ems="10" />
-
-		<TextView
-		    android:id="@+id/textView7"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:text="direccion1" />
-
-		<EditText
-		    android:id="@+id/editText7"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:ems="10" />
-
-		<TextView
-		    android:id="@+id/textView8"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:text="direccion2" />
-
-		<EditText
-		    android:id="@+id/editText8"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:ems="10" />
-
-		<TextView
-		    android:id="@+id/textView9"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:text="coche" />
-
-		<EditText
-		    android:id="@+id/editText9"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:ems="10" />
-
-		<TextView
-		    android:id="@+id/textView10"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:text="dni" />
-
-		<EditText
-		    android:id="@+id/editText10"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:ems="10" />
-
-    </LinearLayout>
-
-    
-
-</ScrollView>
+</RelativeLayout>

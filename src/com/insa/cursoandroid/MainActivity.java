@@ -14,6 +14,15 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
 
+		int currentVersion = android.os.Build.VERSION.SDK_INT;
+		
+		if(currentVersion < android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+		{
+			//Viejos comandos
+		}else
+			{
+				//nuevos comandos
+			}
 		
 	}
 

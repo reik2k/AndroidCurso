@@ -21,27 +21,8 @@ public class MainActivity extends Activity {
 
 		Log.d("onCreateState", "Estamos en el estado de Creación");
 		
-		detectDisplay();
 		
-	}
-	
-	private void detectDisplay()
-	{
-		WindowManager wm 	= getWindowManager();
 		
-		Display d 			= wm.getDefaultDisplay();
-		EditText edt1		=(EditText)findViewById(R.id.editText1);
-		EditText edt2		=(EditText)findViewById(R.id.editText2);
-		
-		if(d.getWidth() < d.getHeight())
-		{
-			edt2.setText("");
-			edt1.setText("Vertical");
-		}else
-			{
-				edt1.setText("");
-				edt2.setText("Horizontal");
-			}
 	}
 	
 	@Override
@@ -56,7 +37,6 @@ public class MainActivity extends Activity {
 		Log.d("onResume","Estamos en el estado de Volver");
 		super.onResume();
 		
-		detectDisplay();
 	}
 	@Override
 	public void onPause()
@@ -93,8 +73,8 @@ public class MainActivity extends Activity {
 	@Override
 	public void onSaveInstanceState(Bundle estado) 
 	{
-		estado.putString("ID", "Este valor se ha guardado tras la destrucción"
-								+	"de la actividad.");
+/*		estado.putString("ID", "Este valor se ha guardado tras la destrucción"
+								+	"de la actividad.");*/
 		super.onSaveInstanceState(estado);
 	}
 	
@@ -103,9 +83,9 @@ public class MainActivity extends Activity {
 	{
 		super.onRestoreInstanceState(estado);
 		
-		Toast.makeText(	getBaseContext(), 
+/*		Toast.makeText(	getBaseContext(), 
 						estado.getString("ID"), 
-						Toast.LENGTH_SHORT).show();
+						Toast.LENGTH_SHORT).show();*/
 	}
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {

@@ -5,8 +5,8 @@
     android:versionName="1.0" >
 
     <uses-sdk
-		android:minSdkVersion="7"
-		android:targetSdkVersion="19" />
+        android:minSdkVersion="7"
+        android:targetSdkVersion="19" />
 
     <application
         android:allowBackup="true"
@@ -21,6 +21,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.insa.cursoandroid.Notificaciones"
+            android:label="@string/title_activity_notificaciones" >
         </activity>
     </application>
 

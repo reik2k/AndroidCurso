@@ -2,9 +2,12 @@ package com.insa.cursoandroid;
 
 import com.insa.cursoandroid.R;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class MainActivity extends Activity {
@@ -18,11 +21,31 @@ public class MainActivity extends Activity {
 		
 		if(currentVersion < android.os.Build.VERSION_CODES.ECLAIR_MR1)
 		{
-			//No soportado Versión por debajo de la API 7 v2.1
+			//Versión por debajo de la API 7 v2.1
 		}else
 			{
 				//nuevos comandos
 			}
+		
+		Button btn = (Button)findViewById(R.id.bntWarning);
+		
+		btn.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				showWarning();
+				
+			}
+		});
+		
+	}
+	
+	private void showWarning()
+	{
+		Intent i = new Intent(this,Notificaciones.class);
+		
+		i.putExtra("id_aviso", "aviso");
+		
+		
 		
 	}
 

@@ -3,6 +3,8 @@ package com.insa.cursoandroid;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -23,7 +25,12 @@ public class Notificaciones extends ActionBarActivity {
 //					.add(R.id.container, new PlaceholderFragment()).commit();
 //		}
 		
-		
+		NotificationManager notManager 	= (NotificationManager)
+									getSystemService(NOTIFICATION_SERVICE); 
+		Notification	warning 		=	new Notification(
+									R.drawable.bad_chicken,
+									"This is a warning",
+									System.currentTimeMillis()); 
 	}
 
 	@Override

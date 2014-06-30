@@ -2,6 +2,9 @@ package com.insa.cursoandroid;
 
 import com.insa.cursoandroid.R;
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,7 +14,7 @@ import android.widget.Button;
 
 
 public class MainActivity extends Activity {
-
+	static	int	id_warning	= 1;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -43,10 +46,25 @@ public class MainActivity extends Activity {
 	{
 		Intent i = new Intent(this,Notificaciones.class);
 		
-		i.putExtra("id_aviso", "aviso");
+		i.putExtra("id_aviso", id_warning);
 		
+		PendingIntent pndIntent = PendingIntent.getActivity(this, 0, i, 0);
 		
+		NotificationManager ntfMan 	= 	(NotificationManager) 
+										getSystemService(NOTIFICATION_SERVICE);
+		Notification not			=	new Notification(	
+											R.drawable.bad_chicken,
+											"The meeting is coming in five minutes.",
+											System.currentTimeMillis());
+		CharSequence sms	=	"System Warning";
+		CharSequence sms2	= 	"The meeting with client is at 17:00.";
 		
+		not.setLatestEventInfo(this, sms, sms2, pndIntent);
+		
+		//espera 100ms, vibra 250ms, espera 100ms y vibra otros 500ms
+		not.vibrate = new long[]{100,250,100,500};
+		
+		ntfMan.notify(id_warning,not);	
 	}
 
 	@Override

@@ -7,5 +7,6 @@
     <string name="strLogo">Logo description</string>
     <string name="title_activity_notificaciones">Notificaciones</string>
     <string name="strWarningButton">Show Warning</string>
+    <string name="strWarnings">The notifications is placing in here</string>
 
 </resources>

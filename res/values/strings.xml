@@ -9,5 +9,8 @@
     <string name="strWarningButton">Show Warning</string>
     <string name="strWarnings">The notifications is placing in here</string>
     <string name="title_activity_main_activity2">MainActivity2</string>
+    <string name="strStartNot">Start Notification</string>
+    <string name="strCancelNot">Cancel Notification</string>
+    <string name="strUpdateNot">Update Notification</string>
 
 </resources>

@@ -17,13 +17,23 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 	static	int	id_warning	= 1;
+	
+	private 	Button	btnStart;
+	private 	Button	btnCancel;
+	private		Button	btnUpdate;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
-
+		
 		int currentVersion = android.os.Build.VERSION.SDK_INT;
+		
+		//Boton para el Ejemplo de las Notificaciones
 		Button btn = (Button)findViewById(R.id.bntWarning);
+		
+		btnStart 	= (Button)findViewById(R.id.btnStartNot);
+		btnCancel 	= (Button)findViewById(R.id.btnCancelNot);
+		btnUpdate 	= (Button)findViewById(R.id.btnUpdateNot);
 		
 		if(currentVersion < android.os.Build.VERSION_CODES.ECLAIR_MR1)
 		{
@@ -40,18 +50,46 @@ public class MainActivity extends Activity {
 				//nuevos comandos
 				btn.setOnClickListener(new View.OnClickListener() {
 				
-				public void onClick(View v) {
-					showWarning();
-					
-				}
-			});
+					public void onClick(View v) {
+						showWarning();
+						
+					}
+				});
+				
+				//Start Notfication
+				btnStart.setOnClickListener(new View.OnClickListener() {
+				
+					public void onClick(View v) {
+						
+						showAlert();
+					}
+				});
+				//Cancel Notfication
+				btnCancel.setOnClickListener(new View.OnClickListener() {
+				
+					public void onClick(View v) {
+						cancelAlert();
+						
+					}
+				});
+				//Update Notfication
+				btnUpdate.setOnClickListener(new View.OnClickListener() {
+				
+					public void onClick(View v) {
+						
+						updateAlert();
+					}
+				});
 			}
-		
-		
-		
-		
-		
 	}
+	
+	protected void showAlert()
+	{}
+	protected void cancelAlert()
+	{}
+	protected void updateAlert()
+	{}
+	
 	private void showWarning()
 	{
 		Intent i = new Intent(this,Notificaciones.class);

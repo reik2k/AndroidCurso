@@ -1,12 +1,14 @@
 package com.insa.cursoandroid; 
 
 import com.insa.cursoandroid.R;
+
 import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,28 +23,56 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main); 
 
 		int currentVersion = android.os.Build.VERSION.SDK_INT;
+		Button btn = (Button)findViewById(R.id.bntWarning);
 		
 		if(currentVersion < android.os.Build.VERSION_CODES.ECLAIR_MR1)
 		{
-			//VersiÃ³n por debajo de la API 7 v2.1
+			//Versión por debajo de la API 7 v2.1
+			btn.setOnClickListener(new View.OnClickListener() {
+				
+				public void onClick(View v) {
+					showWarningOld();
+					
+				}
+			});
 		}else
 			{
 				//nuevos comandos
-			}
-		
-		Button btn = (Button)findViewById(R.id.bntWarning);
-		
-		btn.setOnClickListener(new View.OnClickListener() {
-			
-			public void onClick(View v) {
-				showWarning();
+				btn.setOnClickListener(new View.OnClickListener() {
 				
+				public void onClick(View v) {
+					showWarning();
+					
+				}
+			});
 			}
-		});
+		
+		
+		
+		
 		
 	}
-	
 	private void showWarning()
+	{
+		Intent i = new Intent(this,Notificaciones.class);
+		
+		i.putExtra("id_aviso", id_warning);
+		
+		PendingIntent pndIntent = PendingIntent.getActivity(this, 0, i, 0);
+		
+		NotificationCompat.Builder new_notif = 
+					new NotificationCompat.Builder(this)
+					.setSmallIcon(R.drawable.bad_chicken)
+					.setContentTitle("You have a Alert")
+					.setContentIntent(pndIntent)
+					.setAutoCancel(true);
+		NotificationManager notif_manager = 
+				(NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+		notif_manager.notify(0,new_notif.build());
+		
+			
+	}
+	private void showWarningOld()
 	{
 		Intent i = new Intent(this,Notificaciones.class);
 		

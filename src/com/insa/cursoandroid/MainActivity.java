@@ -1,19 +1,27 @@
 package com.insa.cursoandroid; 
 
 import com.insa.cursoandroid.R;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 public class MainActivity extends Activity {
-
+	
+	private	Button 		btnSend;
+	private	EditText	edtName;
+	private EditText	edtRepeat;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
-
+		
+		
 		
 	}
 

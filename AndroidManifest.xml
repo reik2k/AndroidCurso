@@ -5,8 +5,9 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="7"
+        android:minSdkVersion="14"
         android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:allowBackup="true"
@@ -25,6 +26,10 @@
         <activity
             android:name="com.insa.cursoandroid.Notificaciones"
             android:label="@string/title_activity_notificaciones" >
+        </activity>
+        <activity
+            android:name="com.insa.cursoandroid.MainActivity2"
+            android:label="@string/title_activity_main_activity2" >
         </activity>
     </application>
 

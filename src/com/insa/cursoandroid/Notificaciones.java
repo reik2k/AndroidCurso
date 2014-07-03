@@ -1,19 +1,12 @@
 package com.insa.cursoandroid;
-
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
+import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
 
-public class Notificaciones extends ActionBarActivity {
+public class Notificaciones extends Activity  {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -56,18 +49,18 @@ public class Notificaciones extends ActionBarActivity {
 	/**
 	 * A placeholder fragment containing a simple view.
 	 */
-	public static class PlaceholderFragment extends Fragment {
-
-		public PlaceholderFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_notificaciones,
-					container, false);
-			return rootView;
-		}
-	}
+//	public static class PlaceholderFragment extends Fragment {
+//
+//		public PlaceholderFragment() {
+//		}
+//
+//		@Override
+//		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//				Bundle savedInstanceState) {
+//			View rootView = inflater.inflate(R.layout.fragment_notificaciones,
+//					container, false);
+//			return rootView;
+//		}
+//	}
 
 }

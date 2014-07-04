@@ -7,57 +7,69 @@
     tools:ignore="MergeRootFrame" >
 
     <TextView
-        android:id="@+id/txtTelefono"
+        android:id="@+id/txtSubject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="@string/strPhone"
+        android:text="@string/strSubject"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/edtPhone"
+        android:id="@+id/edtSubject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/txtTelefono"
+        android:layout_below="@+id/txtSubject"
         android:ems="10"
-        android:inputType="text|phone" >
+        android:inputType="textEmailSubject" >
 
         <requestFocus />
     </EditText>
 
     <TextView
-        android:id="@+id/txtMessage"
+        android:id="@+id/txtSendTo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="@string/strMessage"
-        android:layout_below="@+id/edtPhone"
+        android:layout_below="@+id/edtSubject"
+        android:text="@string/strSendTo"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/edtSendTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/txtSendTo"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:lines="5"
+        android:maxLines="5" />
 
     <EditText
         android:id="@+id/edtMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/btnSend"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/txtMessage"
+        android:layout_below="@+id/edtSendTo"
         android:ems="10"
-        android:inputType="textAutoCorrect"
-        android:lines="5"
-        android:maxLines="5" />
+        android:inputType="textEmailAddress" />
 
     <Button
         android:id="@+id/btnSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/edtMessage"
+        android:layout_alignParentTop="false"
         android:text="@string/strSend" />
 
 </RelativeLayout>

@@ -8,5 +8,7 @@
     <string name="strPhone">Write the phone</string>
     <string name="strMessage">Write your mesage</string>
     <string name="strSend">Send</string>
+    <string name="strSubject">Subject</string>
+    <string name="strSendTo">Send to</string>
 
 </resources>

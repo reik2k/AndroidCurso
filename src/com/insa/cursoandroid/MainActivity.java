@@ -26,8 +26,8 @@ public class MainActivity extends Activity {
 		
 		//Init Widgets
 		btnSend 	= (Button)findViewById(R.id.btnSend);
-		edtPhone 	= (EditText)findViewById(R.id.edtPhone);
-		edtMessage 	= (EditText)findViewById(R.id.edtMessage);
+		edtPhone 	= (EditText)findViewById(R.id.edtSubject);
+		edtMessage 	= (EditText)findViewById(R.id.edtSendTo);
 		
 		btnSend.setOnClickListener(new View.OnClickListener() 
 		{

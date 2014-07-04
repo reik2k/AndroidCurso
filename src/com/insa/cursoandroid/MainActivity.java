@@ -36,14 +36,16 @@ public class MainActivity extends Activity {
 				if(	validateSMS(	edtPhone.getText().toString(),
 									edtMessage.getText().toString()))
 				{
-					sendSMS(	edtPhone.getText().toString(),
-								edtMessage.getText().toString());
-					
+					Toast.makeText(	
+							getBaseContext(), 
+							"ERROR: Maybe You've left empty a field or" +
+							" The phone number or Text message is more than" +
+							"9 or 160 characters.", 
+							Toast.LENGTH_LONG).show();
 				}else
 				{
-					Toast.makeText(	getBaseContext(), 
-									"You have to fill both fields", 
-									Toast.LENGTH_SHORT).show();
+					sendSMS(	edtPhone.getText().toString(),
+								edtMessage.getText().toString());
 				}
 				
 			}
@@ -63,7 +65,10 @@ public class MainActivity extends Activity {
 	{
 		Boolean response = false;
 		
-		if(phone.isEmpty() || sms.isEmpty() && sms.length() < 160)
+		if(	!phone.isEmpty() 	&& 
+			!sms.isEmpty()		&& 
+			sms.length() < 160 	&& 
+			phone.length() < 9)
 		{
 			return response;
 		}

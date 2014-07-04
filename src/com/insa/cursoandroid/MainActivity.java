@@ -63,7 +63,7 @@ public class MainActivity extends Activity {
 	{
 		Boolean response = false;
 		
-		if(phone.isEmpty() || sms.isEmpty())
+		if(phone.isEmpty() || sms.isEmpty() && sms.length() < 160)
 		{
 			return response;
 		}

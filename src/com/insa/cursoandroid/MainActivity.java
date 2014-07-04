@@ -2,6 +2,8 @@ package com.insa.cursoandroid;
 
 import com.insa.cursoandroid.R;
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.telephony.gsm.SmsManager;
 import android.telephony.gsm.SmsMessage;
@@ -15,65 +17,86 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	
-	private EditText	edtPhone;
+	private EditText	edtSubject;
 	private	EditText	edtMessage;
+	private EditText	edtSendTo;
 	private Button		btnSend;
-	
+	private int			i;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main); 
 		
 		//Init Widgets
-		btnSend 	= (Button)findViewById(R.id.btnSend);
-		edtPhone 	= (EditText)findViewById(R.id.edtSubject);
-		edtMessage 	= (EditText)findViewById(R.id.edtSendTo);
+		edtSubject 	= (EditText)findViewById(R.id.edtSubject);
+		edtSendTo 	= (EditText)findViewById(R.id.edtSendTo);
+		edtMessage 	= (EditText)findViewById(R.id.edtMessage);
+		btnSend		= (Button)findViewById(R.id.btnSend);
 		
 		btnSend.setOnClickListener(new View.OnClickListener() 
 		{
 			public void onClick(View v) 
 			{
-				if(	validateSMS(	edtPhone.getText().toString(),
-									edtMessage.getText().toString()))
-				{
-					Toast.makeText(	
-							getBaseContext(), 
-							"ERROR: Maybe You've left empty a field or" +
-							" The phone number or Text message is more than" +
-							"9 or 160 characters.", 
-							Toast.LENGTH_LONG).show();
-				}else
-				{
-					sendSMS(	edtPhone.getText().toString(),
-								edtMessage.getText().toString());
-				}
+				String subject	= edtSubject.getText().toString();
+				String message	= edtMessage.getText().toString();
+				String email	= edtSendTo.getText().toString();
 				
+				i = validateEmail(subject,message,email	);
+				
+				switch(i)
+				{
+				case 0:
+					sendEmail(subject,message,email);
+					break;
+				case 1:
+					toastShow("You have to fill subject.");
+					edtSubject.setFocusable(true);
+					break;
+				case 2:
+					toastShow("The message is empty. Please" +
+							", write something.");
+					edtMessage.setFocusable(true);
+					break;
+				case 3:
+					toastShow("You don´t write a email.");
+					edtSendTo.setFocusable(true);
+					break;
+					
+				}
 			}
 		});
 		
 	}
 	
-	protected void sendSMS(String phone, String smsText)
+	protected void toastShow(String messageOut)
 	{
-		SmsManager sms = SmsManager.getDefault();
+		Toast.makeText(	
+				getBaseContext(), 
+				messageOut, 
+				Toast.LENGTH_LONG).show();
+	}
+	protected void sendEmail(String subject, String message, String email)
+	{
+		Intent sendEmail = new Intent(Intent.ACTION_SEND);
+		sendEmail.setData(Uri.parse("mailto:"));
 		
-		sms.sendTextMessage(phone, null, smsText, null, null);
+		sendEmail.putExtra(Intent.EXTRA_EMAIL, email);
+		sendEmail.putExtra(Intent.EXTRA_SUBJECT, subject);
+		sendEmail.putExtra(Intent.EXTRA_TEXT, message);
+		sendEmail.setType("message/rfc822");
 		
+		startActivity(Intent.createChooser(sendEmail, "EMAIL"));
 	}
 	
-	protected boolean validateSMS(String phone, String sms)
+	protected int validateEmail(	String subject, 
+									String message, 
+									String email)
 	{
-		Boolean response = false;
+		if(subject.isEmpty()) 	return 1;
+		if(message.isEmpty())	return 2;
+		if(email.isEmpty())		return 3;
 		
-		if(	!phone.isEmpty() 	&& 
-			!sms.isEmpty()		&& 
-			sms.length() < 160 	&& 
-			phone.length() < 9)
-		{
-			return response;
-		}
-		
-		return true;
+		return 0;
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
